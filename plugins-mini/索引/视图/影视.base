@@ -1,0 +1,64 @@
+filters:
+  and:
+    - categories.containsAny(link("电影"), link("剧集"))
+    - '!file.path.startsWith("模板")'
+properties:
+  note.genre:
+    displayName: 类型
+  note.director:
+    displayName: 导演
+  note.cast:
+    displayName: 演员
+  note.rating:
+    displayName: 评分
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - genre
+      - director
+      - cast
+      - rating
+  - type: table
+    name: 电影
+    filters:
+      and:
+        - categories.contains(link("电影"))
+    order:
+      - file.name
+      - genre
+      - director
+      - cast
+      - rating
+  - type: table
+    name: 剧集
+    filters:
+      and:
+        - categories.contains(link("剧集"))
+    order:
+      - file.name
+      - genre
+      - director
+      - cast
+      - rating
+  - type: table
+    name: 导演
+    filters:
+      and:
+        - list(director).contains(this)
+    order:
+      - file.name
+      - genre
+      - cast
+      - rating
+  - type: table
+    name: 演员
+    filters:
+      and:
+        - list(cast).contains(this)
+    order:
+      - file.name
+      - genre
+      - director
+      - rating

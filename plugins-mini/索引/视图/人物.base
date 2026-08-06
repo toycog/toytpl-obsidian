@@ -1,0 +1,10 @@
+filters:
+  and:
+    - categories.contains(link("人物"))
+    - '!file.path.startsWith("模板")'
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - tags

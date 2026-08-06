@@ -1,0 +1,44 @@
+filters:
+  and:
+    - categories.containsAny(link("电影"), link("剧集"))
+    - '!file.path.startsWith("模板")'
+properties:
+  note.genre:
+    displayName: 类型
+  note.artist:
+    displayName: 原创
+  note.album:
+    displayName: 专辑
+  note.singer:
+    displayName: 歌手
+  note.composer:
+    displayName: 作曲者
+  note.lyricist:
+    displayName: 作词者
+  note.rating:
+    displayName: 评分
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - genre
+      - artist
+      - album
+      - singer
+      - composer
+      - lyricist
+      - rating
+  - type: table
+    name: 歌手
+    filters:
+      and:
+        - singer.contains(this)
+    order:
+      - file.name
+      - genre
+      - artist
+      - album
+      - composer
+      - lyricist
+      - rating
