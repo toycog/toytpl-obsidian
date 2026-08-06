@@ -1,0 +1,41 @@
+filters:
+  and:
+    - categories.contains(link("会面"))
+    - '!file.path.startsWith("模板")'
+properties:
+  note.type:
+    displayName: 类型
+  note.start_at:
+    displayName: 日期
+  note.start_time:
+    displayName: 时间
+  note.people:
+    displayName: 人物
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - start_at
+      - start_time
+      - people
+      - type
+    sort:
+      - property: date
+        direction: DESC
+  - type: table
+    name: 人物
+    filters:
+      and:
+        - list(people).contains(this)
+    order:
+      - file.name
+      - start_at
+      - start_time
+      - type
+      - people
+    sort:
+      - property: start_at
+        direction: DESC
+      - property: start_time
+        direction: DESC

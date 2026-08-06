@@ -1,0 +1,22 @@
+filters:
+  and:
+    - categories.contains(link("剪报"))
+    - '!file.path.startsWith("模板")'
+properties:
+  note.author:
+    displayName: 作者
+  file.ctime:
+    displayName: 摘录时间
+  note.published_at:
+    displayName: 发布时间
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - author
+      - published_at
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC

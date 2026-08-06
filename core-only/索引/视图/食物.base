@@ -1,0 +1,12 @@
+filters:
+  and:
+    - categories.contains(link("食物"))
+    - '!file.path.startsWith("模板")'
+views:
+  - type: table
+    name: 所有
+  - type: table
+    name: 地点
+    filter:
+      and:
+        - loc.contains(this)

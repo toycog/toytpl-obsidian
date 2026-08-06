@@ -1,0 +1,32 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "categories": "multitext",
+    "org": "multitext",
+    "loc": "multitext",
+    "people": "multitext",
+    "author": "multitext",
+    "director": "multitext",
+    "cast": "multitext",
+    "singer": "multitext",
+    "composer": "multitext",
+    "lyricist": "multitext",
+    "rating": "number",
+    "established_on": "date",
+    "published_at": "datetime",
+    "acquired_at": "datetime",
+    "start_at": "datetime",
+    "end_at": "datetime",
+    "clipping_at": "datetime",
+    "price": "number",
+    "book_isbn13": "number",
+    "code_lang": "multitext",
+    "code_domain": "multitext",
+    "code_topics": "multitext",
+    "product_maker": "multitext",
+    "food_cuisine": "multitext",
+    "game_maker": "multitext"
+  }
+}

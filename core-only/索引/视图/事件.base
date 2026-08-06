@@ -1,0 +1,12 @@
+filters:
+  and:
+    - categories.containsAny(link("事件"), link("旅行"))
+    - '!file.path.startsWith("模板")'
+views:
+  - type: table
+    name: 所有
+  - type: table
+    name: 旅行
+    filters:
+      and:
+        - categories.contains(link("旅行"))

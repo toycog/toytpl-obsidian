@@ -1,0 +1,24 @@
+filters:
+  and:
+    - categories.contains(link("图书"))
+    - '!file.path.startsWith("模板")'
+properties:
+  note.author:
+    displayName: 作者
+  note.rating:
+    displayName: 评分
+  note.genre:
+    displayName: 类型
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - author
+      - genre
+      - rating
+  - type: table
+    name: 作者
+    filters:
+      and:
+        - list(author).contains(this)

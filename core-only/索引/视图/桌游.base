@@ -1,0 +1,12 @@
+filters:
+  and:
+    - categories.contains(link("桌游"))
+    - '!file.path.startsWith("模板")'
+views:
+  - type: table
+    name: 所有
+  - type: table
+    name: 制作者
+    filter:
+      and:
+        - maker.contains(this)
