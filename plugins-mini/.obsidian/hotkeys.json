@@ -1,12 +1,4 @@
 {
-  "insert-template": [
-    {
-      "modifiers": [
-        "Ctrl"
-      ],
-      "key": "S"
-    }
-  ],
   "editor:set-heading-1": [
     {
       "modifiers": [
@@ -129,6 +121,34 @@
         "Mod"
       ],
       "key": "G"
+    }
+  ],
+  "file-explorer:new-file": [],
+  "file-explorer:new-file-in-new-pane": [],
+  "notebook-navigator:new-note": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "N"
+    }
+  ],
+  "notebook-navigator:new-note-from-template": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "N"
+    }
+  ],
+  "notebook-navigator:open": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "E"
     }
   ]
 }

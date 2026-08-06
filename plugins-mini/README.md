@@ -1,101 +1,24 @@
 这是一个模板仓库，提供创建好的目录结构与配置好的设置项，以便创建新仓库时复用。同时也可以在尝试新功能时进行随意探索而不污染主力仓库。
 
-> [!NOTE]
-> 正如本仓库名字（Core Only）一样，本仓库==**不使用任何第三方插件**==，以满足注重安全的用户、原生党用户的需求，以及为想自己动手个性化的用户提供基座。
+这个模板由 core-only 添加常用插件而来，尽量避免引入额外的文件类型与语法。
 
-## 使用说明
+插件列表：
 
-### 见闻
-
-见闻说人话就是收集箱，是一切的起点，知识的种子被收集，在这里萌芽。结合官方浏览器工具「Obsidian Web Clipper」以及核心插件「时间戳笔记生成器」设置对应的「剪报」、「闪念」三个目录。
-
-剪报、闪念这两个目录应当每隔一两天就“清空”一次，最好不要超过七天。若非印象深刻的内容，超过七天就容易记忆模糊，忘记当时的心情、感悟、事情的起因等细节。
-
-“清空”是指将其转换为一个笔记中「事件」或「项目」，利用[[#^ins-tpl|插入模板]]就可以轻松转换笔记属性，再使用[[#^mv-note|移动文件]]移入对应目录即可。
-
-### 耕理
-
-耕理是知识发芽成长，成为常青树的地方。
-
-可以在一个短期的「事件」中重组，也可以在一个中长期的「项目」中慢慢记录提炼，最后成为一个永久的客观规律知识输出在「常青」中。
-
-> [!TIP] 事件
-> 与亲朋好友的一次会面、参加了一场活动、推进了一些游戏剧情等。
-
-### 手记
-
-手记主要分为两个目录「日录」、「拾萃」，说人话就是「日记」「总结」。
-
-日录比较特殊，虽然可以将其作为一个日总结，但在双链下最大的作用是被其他笔记链接指向。也就是说日记本身更像是一个锚点或索引页，方便日后会看有哪些笔记链接到了这一天。
-
-拾萃可以根据自身情况创建周、月、季、年不同级别的总结。
-
-### 案卷
-
-案卷说人话就是外部参考的存放位置，一是作为笔记的锚点，连接各个笔记，二是可以纪录对其的看法和备注。
-
-### 索引
-
-索引也是类别，所有的笔记都应指向至少一个类别。若没有合适的类别也可以创建一个，记得创建对应的模板。
-
-### 模板
-
-模板是方便创建、更改笔记属性的内容，同时也可以作为输入片段来使用。
-
-所有笔记都应从模板创建，借此设置哪些高度重复的笔记属性。
-
-本仓库中的模板很多借鉴自 [kepano/kepano-obsidian](https://github.com/kepano/kepano-obsidian)。不少都还需要细细打磨，在使用前请务必查阅模板内容，并针对自己的用途调整。
-
-## 快捷键说明
-
-- 插入模板：`⌃S` ^ins-tpl
-- 移动文件：`⌃M` ^mv-note
-
-## tags 说明
-
-根据 kepano 的仓库，`tags` 本身是遗留问题，应该多使用链接 `[[link]]`。但实际应用时，会有一个问题：空白的链接会很多，而其中很多都只是用于充当链接的桩，不会实际积累内容。
-
-为了解决这一点，`tags` 是一个很好的工具。任何不会积累内容的话题都应该使用 `tags` 解决。实际产生关联的实体自然而然地在正文中使用链接。
-
-例如：算法（一个话题）、音乐人（一种职业）、公园（一类地点）就应该使用 `tags`。
-
-同时不要把分类想得太复杂，多关注内容而非分类。一旦开始分类，精力就会被分类占据，而失去了对真正有意义的事情的记录。如果不确定一个事物该用桩还是标签，那就一股脑使用 `tags: 话题/some`。
-
-> [!NOTE]
-> 其实这里原本是一股脑使用桩比较好，因为只要创建了对应文件，桩就会变成连接至那个文件，而标签无法做到这一点。
-> 
-> 但在实践过程中，很多时候都是想点击桩找关联事物。而在 Obsidian 中，如果桩被点击，那么桩就会变成新建的文件。
-> 
-> 因此按使用频次来看，还是 tags 更适合这一点。
-
-## 笔记属性说明
-
-- `post_category`：文章分类，仅用于发布的分类。
-- `short_id`：Obsidian 中，笔记的唯一标识就是路径，但路径可能变化，故引入短唯一标识。
-	- 如果不使用插件，可以从输入法、Alfred 等工具自行生成。
-	- 如果使用插件，有的插件会自行生成一个唯一标识，此时建议尽量增加前缀区分。
-		例如 `post-`、`task-`
-- `xxx_at_fuzzy`：时间戳模糊程度
-	- `Y`：模糊到年
-	- `M`：模糊到月
-	- `D`：模糊到日
-	- `H`：模糊到小时
-	- `m`：模糊到分钟
-
-## 常见问题
-
-### 为什么没有任务清单？
-
-这个仓库的主要目标是完成知识积累、重组、提炼、输出这四个阶段帮助使用者将知识内化。而任务清单重在过程管理，不是本仓库要解决的问题。如果需要简单的任务管理，那么 Markdown 内置的任务列表语法（`- [ ]`）也足够使用了。
-
-### 为什么目录还有这么多层级？
-
-1. 在无法使用 Obsidian 的情况下，依然具备一定索引能力。
-2. 对于传统笔记软件使用者过渡到链接笔记软件更友好。
-3. 删除目录比创建目录更简单。
-
-### 为什么没有 `created_at` 笔记属性？
-
-虽然在某些情况 `file.ctime` 会出现意外情况，例如手动复制等。但在大部分情况下都可以正常工作，因此额外维护 `created_at` 不是很有必要。
-
-另外如果使用了 `created_at` 属性，那么 `modified_at` 属性也应该是需要的，这两个属性在没有插件辅助的情况下会导致属性维护成本变高。
+- Style Settings
+	- [插件地址](https://community.obsidian.md/plugins/obsidian-style-settings) [文档地址](https://github.com/obsidian-community/obsidian-style-settings) [安装地址](obsidian://show-plugin?id=obsidian-style-settings)
+	- 所有主题微调必装插件。
+- Templater
+	- [插件地址](https://community.obsidian.md/plugins/templater-obsidian) [文档地址](https://silentvoid13.github.io/Templater/) [安装地址](obsidian://show-plugin?id=templater-obsidian)
+	- 模板插件，提供比核心插件更丰富的内容。
+- Notebook Navigator
+	- [插件地址](https://community.obsidian.md/plugins/notebook-navigator) [文档地址](https://notebooknavigator.com/zh-cn/docs.html) [安装地址](obsidian://show-plugin?id=notebook-navigator)
+	- 导航插件，用于替换左侧文件导航。
+- Shiki Highlighter
+	- [插件地址](https://community.obsidian.md/plugins/shiki-highlighter) [文档地址](https://expressive-code.com/key-features/syntax-highlighting/) [安装地址](obsidian://show-plugin?id=shiki-highlighter)
+	- 代码高亮插件，基于 Expressive Code，来获取更丰富的代码块。
+- Advanced Canvas
+	- [插件地址](https://community.obsidian.md/plugins/advanced-canvas) [文档地址](https://github.com/Developer-Mike/obsidian-advanced-canvas) [安装地址](obsidian://show-plugin?id=advanced-canvas)
+	- 绘图插件，增强核心插件白板的功能，可以制作更丰富的图例。
+- Maps
+	- [插件地址](https://community.obsidian.md/plugins/maps) [文档地址](https://obsidian.md/help/bases/views/map) [安装地址](obsidian://show-plugin?id=maps)
+	- 为 Bases 添加地图视图，Obsidian 官方出品。
