@@ -1,0 +1,131 @@
+filters:
+  and:
+    - categories.contains(link("计算机"))
+    - '!file.path.startsWith("模板")'
+properties:
+  file.ctime:
+    displayName: 创建时间
+views:
+  - type: table
+    name: 所有
+  - type: table
+    name: 御器
+    filters:
+      and:
+        - list(code_domain).contains(link("Craft"))
+    order:
+      - file.name
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC
+  - type: table
+    name: 人工智能
+    filters:
+      and:
+        - list(code_domain).contains(link("AI"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 算法
+    filters:
+      and:
+        - list(code_domain).contains(link("Algorithm"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 协议
+    filters:
+      and:
+        - list(code_domain).contains(link("Protocol"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 编程语言
+    filters:
+      and:
+        - list(code_domain).contains(link("Programming Langauge"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 前端
+    filters:
+      and:
+        - list(code_domain).contains(link("Frontend"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 后端
+    filters:
+      and:
+        - list(code_domain).contains(link("Backend"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 数据库
+    filters:
+      and:
+        - list(code_domain).contains(link("Database"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 嵌入式
+    filters:
+      and:
+        - list(code_domain).contains(link("Embedded"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 操作系统
+    filters:
+      and:
+        - list(code_domain).contains(link("Operating System"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC
+  - type: table
+    name: 标准作业程序
+    filters:
+      and:
+        - list(code_domain).contains(link("Standard Operating Procedure"))
+      order:
+        - file.name
+        - file.ctime
+      sort:
+        - property: file.ctime
+          direction: DESC

@@ -1,0 +1,7 @@
+filters:
+  and:
+    - categories.contains(link("项目"))
+    - '!file.path.startsWith("模板")'
+views:
+  - type: table
+    name: 所有

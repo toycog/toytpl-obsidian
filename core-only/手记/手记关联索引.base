@@ -1,0 +1,71 @@
+filters:
+  and:
+    - '!file.hasProperty("journal_type")'
+    - or:
+      - or:
+        - and:
+          - file.ctime.date() >= date(this.journal_start_date)
+          - file.ctime.date() <= date(this.journal_end_date)
+        - and:
+          - file.mtime.date() >= date(this.journal_start_date)
+          - file.mtime.date() <= date(this.journal_end_date)
+      - or:
+        - file.name.contains(this.file.name)
+        - file.links.contains(this.file)
+properties:
+  note.categories:
+    displayName: 类别
+  note.tags:
+    displayName: 标签
+  file.ctime:
+    displayName: 创建时间
+  file.mtime:
+    displayName: 修改时间
+views:
+  - type: table
+    name: 所有
+    order:
+      - file.name
+      - categories
+      - tags
+      - file.ctime
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: 新建
+    filter:
+      and:
+        - file.ctime >= date(this.journal_start_date)
+        - file.ctime <= date(this.journal_end_date)
+    order:
+      - file.name
+      - categories
+      - tags
+      - file.ctime
+      - file.mtime
+    sort:
+      - property: file.ctime
+        direction: DESC
+      - property: file.mtime
+        direction: DESC
+  - type: table
+    name: 修改
+    filter:
+      and:
+        - file.mtime >= date(this.journal_start_date)
+        - file.mtime <= date(this.journal_end_date)
+    order:
+      - file.name
+      - categories
+      - tags
+      - file.mtime
+      - file.ctime
+    sort:
+      - property: file.mtime
+        direction: DESC
+      - property: file.ctime
+        direction: DESC

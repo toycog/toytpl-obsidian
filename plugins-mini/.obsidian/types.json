@@ -22,11 +22,10 @@
     "clipping_at": "datetime",
     "price": "number",
     "book_isbn13": "number",
-    "code_lang": "multitext",
-    "code_domain": "multitext",
-    "code_topics": "multitext",
     "product_maker": "multitext",
     "food_cuisine": "multitext",
-    "game_maker": "multitext"
+    "game_maker": "multitext",
+    "post_categories": "multitext",
+    "post_keywords": "multitext"
   }
 }

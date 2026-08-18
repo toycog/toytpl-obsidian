@@ -2,3 +2,9 @@
 **/.obsidian/appearance.json
 **/.obsidian/graph.json
 **/.obsidian/workspace.json
+**/.obsidian/plugins/
+
+cog-code/.obsidian/*
+!cog-code/.obsidian/types.json
+cog-soft-skill/.obsidian/*
+!cog-soft-skill/.obsidian/types.json
