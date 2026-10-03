@@ -3,5 +3,6 @@
   "templater-obsidian",
   "shiki-highlighter",
   "notebook-navigator",
-  "advanced-canvas"
+  "advanced-canvas",
+  "frontmatter-modified-date"
 ]

@@ -22,3 +22,6 @@
 - Maps
 	- [插件地址](https://community.obsidian.md/plugins/maps) [文档地址](https://obsidian.md/help/bases/views/map) [安装地址](obsidian://show-plugin?id=maps)
 	- 为 Bases 添加地图视图，Obsidian 官方出品。
+- Update Modified Date
+	- [插件地址](https://community.obsidian.md/plugins/frontmatter-modified-date) [文档地址](https://github.com/alangrainger/obsidian-frontmatter-modified-date) [安装地址](obsidian://show-plugin?id=frontmatter-modified-date)
+	- 自动更新元数据中的最后修改时间字段，并且可以按照目录排除需要自动的笔记。
