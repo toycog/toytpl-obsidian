@@ -1,0 +1,2 @@
+- [ ] `plugins-mini` 添加插件 [Update modified date](https://community.obsidian.md/plugins/frontmatter-modified-date)
+- [x] 为所有模板添加 `created_at`、`modified_at` 字段

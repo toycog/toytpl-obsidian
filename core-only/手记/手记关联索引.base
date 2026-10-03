@@ -1,14 +1,17 @@
+formula:
+  created_time: 'date(if(created_at, created_at, file.ctime))'
+  modified_time: 'date(if(modified_at, modified_at, file.mtime))'
 filters:
   and:
     - '!file.hasProperty("journal_type")'
     - or:
       - or:
         - and:
-          - file.ctime.date() >= date(this.journal_start_date)
-          - file.ctime.date() <= date(this.journal_end_date)
+          - created_time >= date(this.journal_start_date)
+          - created_time <= date(this.journal_end_date)
         - and:
-          - file.mtime.date() >= date(this.journal_start_date)
-          - file.mtime.date() <= date(this.journal_end_date)
+          - modified_time >= date(this.journal_start_date)
+          - modified_time <= date(this.journal_end_date)
       - or:
         - file.name.contains(this.file.name)
         - file.links.contains(this.file)
@@ -17,9 +20,9 @@ properties:
     displayName: 类别
   note.tags:
     displayName: 标签
-  file.ctime:
+  formula.created_time:
     displayName: 创建时间
-  file.mtime:
+  formula.modified_time:
     displayName: 修改时间
 views:
   - type: table
@@ -28,44 +31,44 @@ views:
       - file.name
       - categories
       - tags
-      - file.ctime
-      - file.mtime
+      - formula.created_time
+      - formula.modified_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
-      - property: file.mtime
+      - property: formula.modified_time
         direction: DESC
   - type: table
     name: 新建
     filter:
       and:
-        - file.ctime >= date(this.journal_start_date)
-        - file.ctime <= date(this.journal_end_date)
+        - formula.created_time >= date(this.journal_start_date)
+        - formula.created_time <= date(this.journal_end_date)
     order:
       - file.name
       - categories
       - tags
-      - file.ctime
-      - file.mtime
+      - formula.created_time
+      - formula.modified_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
-      - property: file.mtime
+      - property: formula.modified_time
         direction: DESC
   - type: table
     name: 修改
     filter:
       and:
-        - file.mtime >= date(this.journal_start_date)
-        - file.mtime <= date(this.journal_end_date)
+        - formula.modified_time >= date(this.journal_start_date)
+        - formula.modified_time <= date(this.journal_end_date)
     order:
       - file.name
       - categories
       - tags
-      - file.mtime
-      - file.ctime
+      - formula.modified_time
+      - formula.created_time
     sort:
-      - property: file.mtime
+      - property: formula.modified_time
         direction: DESC
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC

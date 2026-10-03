@@ -15,6 +15,7 @@
     "lyricist": "multitext",
     "rating": "number",
     "established_on": "date",
+    "created_at": "datetime",
     "published_at": "datetime",
     "acquired_at": "datetime",
     "start_at": "datetime",

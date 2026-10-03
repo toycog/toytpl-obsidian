@@ -1,9 +1,12 @@
+formula:
+  created_time: 'date(if(created_at, created_at, file.ctime))'
+  modified_time: 'date(if(modified_at, modified_at, file.mtime))'
 filters:
   and:
     - categories.contains(link("软技能"))
     - '!file.path.startsWith("模板")'
 properties:
-  file.ctime:
+  formula.created_time:
     displayName: 创建时间
 views:
   - type: table
@@ -15,9 +18,9 @@ views:
         - file.tags.contains("话题/学习")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 目标管理
@@ -26,9 +29,9 @@ views:
         - file.tags.contains("话题/目标管理")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 项目计划
@@ -37,9 +40,9 @@ views:
         - file.tags.contains("话题/计划管理")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 复盘
@@ -48,9 +51,9 @@ views:
         - file.tags.contains("话题/复盘")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 自我认知
@@ -59,9 +62,9 @@ views:
         - file.tags.contains("话题/自我认知")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 团队建设
@@ -70,7 +73,7 @@ views:
         - file.tags.contains("话题/团队建设")
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC

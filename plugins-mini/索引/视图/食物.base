@@ -1,3 +1,6 @@
+formula:
+  created_time: 'date(if(created_at, created_at, file.ctime))'
+  modified_time: 'date(if(modified_at, modified_at, file.mtime))'
 filters:
   and:
     - categories.contains(link("食物"))

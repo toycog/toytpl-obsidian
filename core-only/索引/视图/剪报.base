@@ -1,3 +1,6 @@
+formula:
+  created_time: 'date(if(created_at, created_at, file.ctime))'
+  modified_time: 'date(if(modified_at, modified_at, file.mtime))'
 filters:
   and:
     - categories.contains(link("剪报"))
@@ -5,7 +8,7 @@ filters:
 properties:
   note.author:
     displayName: 作者
-  file.ctime:
+  formula.created_time:
     displayName: 摘录时间
   note.published_at:
     displayName: 发布时间
@@ -16,7 +19,7 @@ views:
       - file.name
       - author
       - published_at
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC

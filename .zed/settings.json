@@ -4,6 +4,12 @@
 // see the documentation: https://zed.dev/docs/configuring-zed#settings-files
 {
   "file_types": {
-    "YAML": ["base"]
-  }
+    "YAML": ["base"],
+  },
+  "languages": {
+    "Markdown": {
+      "tab_size": 4,
+      "hard_tabs": true,
+    },
+  },
 }

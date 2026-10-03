@@ -1,10 +1,13 @@
+formula:
+  created_time: 'date(if(created_at, created_at, file.ctime))'
+  modified_time: 'date(if(modified_at, modified_at, file.mtime))'
 filters:
   and:
     - categories.contains(link("计算机"))
     - '!file.path.startsWith("模板")'
 properties:
-  file.ctime:
-    displayName: 创建时间
+   formula.created_time:
+     displayName: 创建时间
 views:
   - type: table
     name: 所有
@@ -15,9 +18,9 @@ views:
         - list(code_domain).contains(link("Craft"))
     order:
       - file.name
-      - file.ctime
+      - formula.created_time
     sort:
-      - property: file.ctime
+      - property: formula.created_time
         direction: DESC
   - type: table
     name: 人工智能
@@ -26,9 +29,9 @@ views:
         - list(code_domain).contains(link("AI"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 算法
@@ -37,9 +40,9 @@ views:
         - list(code_domain).contains(link("Algorithm"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 协议
@@ -48,9 +51,9 @@ views:
         - list(code_domain).contains(link("Protocol"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 编程语言
@@ -59,9 +62,9 @@ views:
         - list(code_domain).contains(link("Programming Langauge"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 前端
@@ -70,9 +73,9 @@ views:
         - list(code_domain).contains(link("Frontend"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 后端
@@ -81,9 +84,9 @@ views:
         - list(code_domain).contains(link("Backend"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 数据库
@@ -92,9 +95,9 @@ views:
         - list(code_domain).contains(link("Database"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 嵌入式
@@ -103,9 +106,9 @@ views:
         - list(code_domain).contains(link("Embedded"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 操作系统
@@ -114,9 +117,9 @@ views:
         - list(code_domain).contains(link("Operating System"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
   - type: table
     name: 标准作业程序
@@ -125,7 +128,7 @@ views:
         - list(code_domain).contains(link("Standard Operating Procedure"))
       order:
         - file.name
-        - file.ctime
+        - formula.created_time
       sort:
-        - property: file.ctime
+        - property: formula.created_time
           direction: DESC
