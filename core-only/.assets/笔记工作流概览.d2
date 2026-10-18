@@ -1,0 +1,114 @@
+direction: right
+
+style: {
+  fill: transparent
+}
+
+classes: {
+  dot-edge: {
+    style: {
+      stroke-dash: 3
+      stroke: "#8b949e"
+    }
+  }
+  见闻: {
+    label: "见闻"
+    style: {
+      fill: "#ffd8a8"
+      stroke: "#d9480f"
+      font-color: "#7f2704"
+      bold: true
+    }
+  }
+  耕理: {
+    label: "耕理"
+    style: {
+      fill: "#c3f0c8"
+      stroke: "#2f9e44"
+      font-color: "#1b5e20"
+      bold: true
+    }
+  }
+  常青: {
+    label: "常青"
+    style: {
+      fill: "#b2f2ee"
+      stroke: "#0c8599"
+      font-color: "#0b4f5c"
+      bold: true
+    }
+  }
+  案卷: {
+    label: "案卷"
+    style: {
+      fill: "#bcd9ff"
+      stroke: "#1971c2"
+      font-color: "#0b3d70"
+      bold: true
+    }
+  }
+  手记: {
+    label: "手记"
+    style: {
+      fill: "#dcc6ff"
+      stroke: "#7048e8"
+      font-color: "#3b1e78"
+      bold: true
+    }
+  }
+  模板: {
+    label: "模板"
+    style: {
+      fill: "#e0e0e0"
+      stroke: "#6b7280"
+      font-color: "#24292f"
+      bold: true
+    }
+  }
+  索引: {
+    label: "索引"
+    style: {
+      fill: "#ffc9c9"
+      stroke: "#e03131"
+      font-color: "#7a1414"
+      bold: true
+    }
+  }
+}
+
+笔记: {
+  grid-rows: 3
+  案卷: {class: 案卷}
+  流转: {
+    label: ""
+    direction: right
+    见闻: {class: 见闻}
+    耕理: {class: 耕理}
+    常青: {class: 常青}
+    见闻 -> 耕理 -> 常青
+  }
+  手记: {class: 手记}
+}
+
+模板: {class: 模板}
+索引: {class: 索引}
+
+模板 -> 笔记: 生成 {
+  style: {
+    stroke: "#6b7280"
+    font-color: "#57606a"
+  }
+}
+笔记 <- 索引: 查询 {
+  style: {
+    stroke: "#e03131"
+    font-color: "#b02a2a"
+  }
+}
+
+笔记.案卷 <- 笔记.流转.见闻: 引用 {class: dot-edge}
+笔记.案卷 <- 笔记.流转.耕理: 引用 {class: dot-edge}
+笔记.案卷 <- 笔记.流转.常青: 引用 {class: dot-edge}
+笔记.手记 -> 笔记.流转.见闻: 引用 {class: dot-edge}
+笔记.手记 -> 笔记.流转.耕理: 引用 {class: dot-edge}
+笔记.手记 -> 笔记.流转.常青: 引用 {class: dot-edge}
